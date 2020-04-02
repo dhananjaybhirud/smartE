@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Table} from 'react-bootstrap'
+import Menu from './components/menu'
+import Userlist from "./components/userlist";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Menu/>
+
+      <div className='main-content'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-12'>
+              <div className='table-responsive'>
+                <Table bordered hover>
+                  <thead>
+                  <tr>
+                    <th>Sr No.</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                   <Userlist />
+                  </tbody>
+                </Table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
